@@ -79,8 +79,8 @@ Runs the flask application on localhost:5000.
 
 # Documentation
 
-Relevant documentation is located in [`jfk_atms/documentation`](https://github.com/trannolis/jfk_atms/tree/master/Documentation)
+Relevant documentation is located in [`jfk_atms/documentation`](Documentation)
 
-* [`SRS`](https://github.com/trannolis/jfk_atms/blob/master/Documentation/CS4513-SRS-003-Group-A11-1.pdf)
-* [`Terminal and flight data planning`](https://github.com/trannolis/jfk_atms/blob/master/Documentation/Terminal%20Structure%20and%20Flight%20Data%20Planning.pdf)
-* [`ATMS content diagram`](https://github.com/trannolis/jfk_atms/blob/master/Documentation/atms_component_diagram.png)
+* [`SRS`](Documentation/CS4513-SRS-003-Group-A11-1.pdf)
+* [`Terminal and flight data planning`](Documentation/Terminal%20Structure%20and%20Flight%20Data%20Planning.pdf)
+* [`ATMS content diagram`](Documentation/atms_component_diagram.png)
