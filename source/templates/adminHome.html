@@ -1,0 +1,23 @@
+<html>
+<head>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+</head>
+
+<h1 style="text-align:center"> Hello {{ username }}</h1>
+
+<body style="text-align:center">
+	<br>
+	<a href="/registerAtc">Register a new Air Traffic Controller</a>
+	<br>
+	<a href="/registerPilot">Register a new Pilot</a>
+	<br>
+	<a href ="/showUser"> Delete an existing user</a>
+	<br>
+	<a href="/logout">Logout</a>
+	<br><br>
+	<a href="/">Go back</a>
+
+
+</body>
+
+</html>

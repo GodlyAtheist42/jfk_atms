@@ -1,7 +1,10 @@
 <html>
+
 <head>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
 </head>
-<body>
+
+<body style="text-align:center">
 
 <style type="text/css">
 	table, th, td{
@@ -9,29 +12,53 @@
 	}
 </style>
 
-Here are posts by {{poster_name}}:
+<h1> All Scheduled Flights </h1>
 
-<table>
-	<th>Time</th>
-	<th>Post</th>
+<table align="center">
+	<th> Select </th>
+	<th>ID</th>
+	<th>Arrival Time</th>
+	<th>Departure Time</th>
+	<th>Departure Location </th>
+	<th>Arrival Location</th>
+	<th> Airplane ID</th>
+	<th> Gate Number </th>
+	<th> Runway Number</th>
 
-{% for line in posts %}
+<form action="/showFlights" method="POST">
+{% for flight in flights %}
 	<tr>
-		<td>{{line.ts}}</td>
-		<td>{{line.blog_post}}</td>
+		<td> <input type="radio" id={{flight['_id']}} name="select" value={{flight['_id']}} required>
+			<label for="select"></label><br> </td>
+		<td>{{flight['_id']}}</td>
+		<td>{{flight['arrivalTime']}}</td>
+		<td>{{flight['departureTime']}}</td>
+		<td>{{flight['departureLocation']}}</td>
+		<td>{{flight['arrivalLocation']}}</td>
+		<td>{{flight['airplaneID']}}</td>
+		<td>{{flight['gate']}}</td>
+		<td>{{flight['runway']}}</td>
 	</tr>
 {% endfor %}
 </table>
+<br>
+
+<td> <input type="radio" id="gate" name="update" value="gate" required>
+	<label for="update">Update Gate</label><br> </td>
+<td> <input type="radio" id="runway" name="update" value="runway"required>
+	<label for="update">Update Runway </label><br> </td>
+<br>
+<input type="submit" value = Continue />
+{% if error %}
+	<p class="error"><strong>Error:</strong> {{error}}</p>
+{% endif %}
+<br>
+</form>
 
 <br>
+<a href="/atcHome">Back</a>
 <br>
-<a href="/select_blogger">Select another blogger</a>
-<br>
-<br>
-<a href="/home">Post a message</a>
-<br>
-<br>
-<a href="/logout">Logout</a>
+<a href="/logout">Logout</a> 
 
 </body>
 
